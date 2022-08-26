@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <!-- Update the following three entries -->
+  <groupId>io.github.padaiyal</groupId>
+  <artifactId>mavenprojecttemplate</artifactId>
+  <version>2021.12.31</version>
+
+  <parent>
+    <groupId>io.github.padaiyal</groupId>
+    <artifactId>popper</artifactId>
+    <version>2021.12.19</version>
+  </parent>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>jMavenProjectTemplate MVN package deployment</name>
+      <url>https://maven.pkg.github.com/padaiyal/jMavenProjectTemplate</url>
+    </repository>
+  </distributionManagement>
+
+</project>
