@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.padaiyal.utilities</groupId>
+  <artifactId>i18n</artifactId>
+  <version>2021.01.14</version>
+
+  <parent>
+    <groupId>org.padaiyal</groupId>
+    <artifactId>popper</artifactId>
+    <version>2021.01.09</version>
+    <relativePath>jPopper</relativePath>
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>org.padaiyal.utilities</groupId>
+      <artifactId>properties</artifactId>
+      <version>2021.01.13</version>
+      <scope>system</scope>
+      <systemPath>${pom.basedir}/properties-2021.01.13.jar</systemPath>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>jI18n MVN package deployment</name>
+      <url>https://maven.pkg.github.com/padaiyal/jI18n</url>
+    </repository>
+  </distributionManagement>
+
+</project>
