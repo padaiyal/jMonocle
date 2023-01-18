@@ -6,12 +6,12 @@
 
   <groupId>io.github.padaiyal.libs</groupId>
   <artifactId>host</artifactId>
-  <version>2023.01.13</version>
+  <version>2023.01.18</version>
 
   <parent>
     <groupId>io.github.padaiyal</groupId>
     <artifactId>popper</artifactId>
-    <version>2023.01.13</version>
+    <version>2023.01.18</version>
   </parent>
 
   <distributionManagement>

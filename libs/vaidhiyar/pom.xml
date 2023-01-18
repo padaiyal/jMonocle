@@ -6,12 +6,12 @@
 
   <groupId>io.github.padaiyal.libs</groupId>
   <artifactId>vaidhiyar</artifactId>
-  <version>2023.01.13</version>
+  <version>2023.01.18</version>
 
   <parent>
     <groupId>io.github.padaiyal</groupId>
     <artifactId>popper</artifactId>
-    <version>2023.01.13</version>
+    <version>2023.01.18</version>
   </parent>
 
   <distributionManagement>
@@ -23,8 +23,8 @@
   </distributionManagement>
 
   <properties>
-    <dependency.jProperties.version>2023.01.13</dependency.jProperties.version>
-    <dependency.jI18n.version>2023.01.13</dependency.jI18n.version>
+    <dependency.jProperties.version>2023.01.18</dependency.jProperties.version>
+    <dependency.jI18n.version>2023.01.18</dependency.jI18n.version>
     <dependency.mockito.version>4.11.0</dependency.mockito.version>
     <dependency.gson.version>2.10.1</dependency.gson.version>
   </properties>
@@ -33,12 +33,12 @@
     <dependency>
       <groupId>io.github.padaiyal.libs</groupId>
       <artifactId>properties</artifactId>
-      <version>2023.01.13</version>
+      <version>2023.01.18</version>
     </dependency>
     <dependency>
       <groupId>io.github.padaiyal.libs</groupId>
       <artifactId>i18n</artifactId>
-      <version>2023.01.13</version>
+      <version>2023.01.18</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
     <dependency>
