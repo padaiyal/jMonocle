@@ -6,7 +6,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-<div align="center">
+<div align="left">
   <h1 align="center">Monocle</h1>
   <p align="center">
     A mono repo containing all the java libraries.
