@@ -1,4 +1,4 @@
-package org.padaiyal.mavenprojecttemplate.parameterconverters;
+package org.padaiyal.utilities.unittestextras.parameterconverters;
 
 import java.util.Objects;
 import org.junit.jupiter.api.extension.ParameterContext;
@@ -14,7 +14,8 @@ public class ExceptionClassConverter implements ArgumentConverter {
    * Converts a given exception class string to the class object.
    *
    * @param expectedExceptionClassString String representation of the exception class.
-   * @return The exception class object corresponding to the input string.
+   * @return                             The exception class object corresponding to the input
+   *                                     string.
    * @throws ArgumentConversionException When an error occurs during conversion.
    */
   public static Class<? extends Exception> convertExceptionNameToClass(
@@ -23,21 +24,26 @@ public class ExceptionClassConverter implements ArgumentConverter {
     // Input validation
     Objects.requireNonNull(expectedExceptionClassString);
 
-    return switch (expectedExceptionClassString) {
-      case "NullPointerException.class" -> NullPointerException.class;
-      case "IllegalArgumentException.class" -> IllegalArgumentException.class;
-      default -> throw new ArgumentConversionException(
-          "Unable to parse expected exception from input string: " + expectedExceptionClassString
+    switch (expectedExceptionClassString) {
+      case "NullPointerException.class": return NullPointerException.class;
+      case "IllegalArgumentException.class": return IllegalArgumentException.class;
+      default: throw new ArgumentConversionException(
+          String.format(
+              "Unable to parse expected exception from input string: %s.",
+              expectedExceptionClassString
+          )
       );
-    };
+    }
   }
 
   /**
    * Converts a given exception class string to the class object.
    *
    * @param expectedExceptionClassString String representation of the exception class.
-   * @param context The parameter context where the converted object will be used.
-   * @return The exception class object corresponding to the input string.
+   * @param context                      The parameter context where the converted object will be
+   *                                     used.
+   * @return                             The exception class object corresponding to the input
+   *                                     string.
    * @throws ArgumentConversionException When an error occurs during conversion.
   */
   @Override

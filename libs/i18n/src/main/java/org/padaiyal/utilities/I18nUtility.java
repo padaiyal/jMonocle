@@ -161,14 +161,14 @@ public final class I18nUtility {
               String.format(
                       "Adding resource bundle - %s using the classpath %s",
                       resourceBundleName,
-                      cls.getPackageName()
+                      cls.getPackage().getName()
               )
       );
     }
     ResourceBundle resourceBundle = ResourceBundle.getBundle(
         String.format(
             "%s.%s",
-            cls.getPackageName(),
+            cls.getPackage().getName(),
             resourceBundleName
         ),
         locale

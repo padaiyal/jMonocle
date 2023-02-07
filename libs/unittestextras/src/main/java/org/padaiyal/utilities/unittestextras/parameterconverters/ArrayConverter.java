@@ -3,32 +3,16 @@ package org.padaiyal.utilities.unittestextras.parameterconverters;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Locale;
 import java.util.Objects;
 import java.util.function.Function;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
-import org.padaiyal.utilities.I18nUtility;
 
 
 /**
  * Converts a string into arrays of different types.
  */
 public class ArrayConverter extends SimpleArgumentConverter {
-
-  /**
-   * Initializes all dependant values.
-   */
-  public static Runnable dependantValuesInitializer = () -> I18nUtility.addResourceBundle(
-      ArrayConverter.class,
-      ArrayConverter.class.getSimpleName(),
-      Locale.US
-  );
-
-  static {
-    dependantValuesInitializer.run();
-  }
-
 
   /**
    * Private constructor.
@@ -53,9 +37,10 @@ public class ArrayConverter extends SimpleArgumentConverter {
     Objects.requireNonNull(targetType);
     if (!(arrayObject instanceof String)) {
       throw new ArgumentConversionException(
-          I18nUtility.getFormattedString(
-              "ArrayConverter.error.conversionNotSupported",
-              arrayObject.getClass().getName(), targetType.getName()
+          String.format(
+              "Conversion from %s to %s not supported.",
+              arrayObject.getClass().getName(),
+              targetType.getName()
           )
       );
     }
@@ -75,11 +60,12 @@ public class ArrayConverter extends SimpleArgumentConverter {
 
     if (!map.containsKey(targetType)) {
       throw new ArgumentConversionException(
-          I18nUtility.getFormattedString(
-              "ArrayConverter.error.conversionNotSupported",
+          String.format(
+              "Conversion from %s to %s not supported.",
               arrayObject.getClass().getName(),
               targetType.getName()
-          ));
+          )
+      );
     }
 
     return Arrays.stream(result)

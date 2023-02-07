@@ -1,27 +1,17 @@
 package org.padaiyal.utilities.unittestextras.annotations;
 
-import java.util.Locale;
 import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.support.AnnotationConsumer;
-import org.padaiyal.utilities.I18nUtility;
 
 /**
  * Provider class used to create the stream of ranged values.
  */
 public class RangedArgumentsProvider implements ArgumentsProvider,
     AnnotationConsumer<RangedSource> {
-
-  static {
-    I18nUtility.addResourceBundle(
-        RangedArgumentsProvider.class,
-        RangedArgumentsProvider.class.getSimpleName(),
-        Locale.US
-    );
-  }
 
   /**
    * Start of the range. It is inclusive.
@@ -77,8 +67,8 @@ public class RangedArgumentsProvider implements ArgumentsProvider,
   public void accept(RangedSource rangedSource) {
     if (rangedSource.start() > rangedSource.end() && rangedSource.step() > 0) {
       throw new IllegalArgumentException(
-          I18nUtility.getFormattedString(
-              "RangedArgumentsProvider.error.invalidEndAndStartOfIncreasingRange",
+          String.format(
+              "Invalid range from %f to %f with step %f.",
               rangedSource.start(),
               rangedSource.end(),
               rangedSource.step()

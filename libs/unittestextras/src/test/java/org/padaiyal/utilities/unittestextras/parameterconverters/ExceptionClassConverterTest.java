@@ -1,9 +1,8 @@
-package tests.org.padaiyal.mavenprojecttemplate.parameterconverters;
+package org.padaiyal.utilities.unittestextras.parameterconverters;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
-import org.padaiyal.mavenprojecttemplate.parameterconverters.ExceptionClassConverter;
 
 /**
  * Tests the functionality of ExceptionClassConverter.
@@ -11,7 +10,7 @@ import org.padaiyal.mavenprojecttemplate.parameterconverters.ExceptionClassConve
 public class ExceptionClassConverterTest {
 
   /**
-   * Tests org.padaiyal.mavenprojecttemplate.parameterconverters.ExceptionClassConverter
+   * Tests org.padaiyal.popper.parameterconverters.ExceptionClassConverter
    * ::convertExceptionNameToClass() with invalid inputs.
    */
   @Test
@@ -31,8 +30,8 @@ public class ExceptionClassConverterTest {
   }
 
   /**
-   * Tests org.padaiyal.mavenprojecttemplate.parameterconverters.ExceptionClassConverter
-   * ::convertExceptionNameToClass() withvalid inputs.
+   * Tests org.padaiyal.popper.parameterconverters.ExceptionClassConverter
+   * ::convertExceptionNameToClass() with valid inputs.
    */
   @Test
   public void testConvertExceptionNameToClassWithValidInputs() {
