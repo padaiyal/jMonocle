@@ -18,7 +18,13 @@
     <dependency>
       <groupId>io.github.padaiyal.libs</groupId>
       <artifactId>properties</artifactId>
-      <version>2023.01.18</version>
+      <version>2023.02.07</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.padaiyal.libs</groupId>
+      <artifactId>unittestextras</artifactId>
+      <version>2023.02.07</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 

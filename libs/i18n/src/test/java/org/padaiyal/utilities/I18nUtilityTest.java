@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.padaiyal.parameterconverters.ExceptionClassConverter;
+import org.padaiyal.utilities.unittestextras.parameterconverters.ExceptionClassConverter;
 
 /**
  * Test class for I18nUtility.

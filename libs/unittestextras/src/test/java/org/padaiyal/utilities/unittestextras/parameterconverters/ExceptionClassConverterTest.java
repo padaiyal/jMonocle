@@ -1,5 +1,7 @@
 package org.padaiyal.utilities.unittestextras.parameterconverters;
 
+import java.util.IllegalFormatConversionException;
+import java.util.MissingResourceException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
@@ -42,6 +44,16 @@ public class ExceptionClassConverterTest {
     Assertions.assertEquals(
         IllegalArgumentException.class,
         ExceptionClassConverter.convertExceptionNameToClass("IllegalArgumentException.class")
+    );
+    Assertions.assertEquals(
+            MissingResourceException.class,
+            ExceptionClassConverter.convertExceptionNameToClass(
+                    "MissingResourceException.class")
+    );
+    Assertions.assertEquals(
+            IllegalFormatConversionException.class,
+            ExceptionClassConverter.convertExceptionNameToClass(
+                    "IllegalFormatConversionException.class")
     );
   }
 }
