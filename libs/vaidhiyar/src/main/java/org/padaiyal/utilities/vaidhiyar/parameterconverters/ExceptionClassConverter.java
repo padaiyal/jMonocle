@@ -34,16 +34,16 @@ public class ExceptionClassConverter implements ArgumentConverter {
     // Input validation
     Objects.requireNonNull(expectedExceptionClassString);
 
-    return switch (expectedExceptionClassString) {
-      case "NullPointerException.class" -> NullPointerException.class;
-      case "IllegalArgumentException.class" -> IllegalArgumentException.class;
-      default -> throw new ArgumentConversionException(
+    switch (expectedExceptionClassString) {
+      case "NullPointerException.class": return NullPointerException.class;
+      case "IllegalArgumentException.class": return IllegalArgumentException.class;
+      default: throw new ArgumentConversionException(
           I18nUtility.getFormattedString(
               "ExceptionClassConverter.error.unableToParseExceptionClass",
               expectedExceptionClassString
           )
       );
-    };
+    }
   }
 
   /**

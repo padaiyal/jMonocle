@@ -11,6 +11,7 @@ import org.padaiyal.utilities.PropertyUtility;
  * Enum used to represent the operating system of a machine.
  */
 public enum OperatingSystem {
+  /** Windows Operating System. */
   WINDOWS(
       "WINDOWS",
       "CommandLineUtility.windows.where",
@@ -20,6 +21,7 @@ public enum OperatingSystem {
       CommandLine.ZSH,
       CommandLine.SH
   ),
+  /** Linux Operating System. */
   LINUX(
       "LINUX",
       "CommandLineUtility.linux.which",
@@ -27,6 +29,7 @@ public enum OperatingSystem {
       CommandLine.ZSH,
       CommandLine.SH
   ),
+  /** Macintosh Operating System. */
   MAC_OS_X(
       "MAC OS X",
       "CommandLineUtility.macos.which",
@@ -38,6 +41,7 @@ public enum OperatingSystem {
       CommandLine.CSH,
       CommandLine.CMD
   ),
+  /** Unknown Operating System. */
   UNKNOWN(
       "UNKNOWN",
       null

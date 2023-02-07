@@ -19,6 +19,9 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Apache License][license-shield]][license-url] <br>
+![Maven build - Ubuntu latest](https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20clean%20test%20verify/badge.svg?branch=main)
+[![Publish package to the Maven Central Repository](https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml/badge.svg)](https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml) <br>
+[![Latest version in Maven Central](https://img.shields.io/maven-central/v/io.github.padaiyal.libs/commandline)](https://search.maven.org/artifact/io.github.padaiyal.libs/commandline)
 </div>
 
 <!--

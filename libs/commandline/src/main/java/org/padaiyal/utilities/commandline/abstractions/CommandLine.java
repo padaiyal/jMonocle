@@ -12,15 +12,21 @@ import org.padaiyal.utilities.commandline.exceptions.CommandLineNotFoundExceptio
  * Enum to represent the type of command line to use to execute commands.
  */
 public enum CommandLine {
+  /** BASH. */
   BASH,
+  /** DOS COMMANDLINE. */
   CMD,
+  /** C SHELL. */
   CSH,
+  /** K SHELL. */
   KSH,
-  @SuppressWarnings("SpellCheckingInspection")
+  /** POWERSHELL. */
   POWERSHELL,
+  /** SHELL. */
   SH,
-  @SuppressWarnings("SpellCheckingInspection")
+  /** TC SHELL. */
   TCSH,
+  /** Z SHELL. */
   ZSH;
 
   /**

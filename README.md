@@ -7,11 +7,11 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 <div align="center">
-  <h1 align="center">Project Name</h1>
+  <h1 align="center">Monocle</h1>
   <p align="center">
-    A template for Java maven projects.
+    A mono repo containing all the java libraries.
     <br />
-    <a href="https://github.com/padaiyal/jMavenProjectTemplate/issues/new/choose">Report Bug/Request Feature</a>
+    <a href="https://github.com/padaiyal/jMonocle/issues/new/choose">Report Bug/Request Feature</a>
   </p>
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -19,16 +19,9 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Apache License][license-shield]][license-url] <br>
-![Maven build - Ubuntu latest](https://github.com/padaiyal/jMavenProjectTemplate/workflows/Maven%20build%20-%20Ubuntu%20latest/badge.svg?branch=main)
-![Maven build - Windows latest](https://github.com/padaiyal/jMavenProjectTemplate/workflows/Maven%20build%20-%20Windows%20latest/badge.svg?branch=main)
-![Maven build - MacOS latest](https://github.com/padaiyal/jMavenProjectTemplate/workflows/Maven%20build%20-%20MacOS%20latest/badge.svg?branch=main)
-![Publish to GitHub packages](https://github.com/padaiyal/jMavenProjectTemplate/workflows/Publish%20to%20GitHub%20packages/badge.svg)
-</div>
-
-<!--
-*** To avoid retyping too much info. Do a search and replace with your text editor for the following:
-    'jMavenProjectTemplate'
- -->
+![Maven build - Ubuntu latest](https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20clean%20test%20verify/badge.svg?branch=main)
+[![Publish package to the Maven Central Repository](https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml/badge.svg)](https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml) <br>
+[![Latest version in Maven Central](https://img.shields.io/maven-central/v/io.github.padaiyal/monocle)](https://search.maven.org/artifact/io.github.padaiyal/monocle)
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -62,7 +55,7 @@ Specify the steps to set up and use the project.
 
 <!-- ROADMAP -->
 ## Roadmap
-See the [open issues](https://github.com/padaiyal/jMavenProjectTemplate/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/padaiyal/jMonocle/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -77,18 +70,18 @@ Contributions are what make the open source community such an amazing place to b
 
 <!-- LICENSE -->
 ## License
-Distributed under the Apache License. See [`LICENSE`](https://github.com/padaiyal/jMavenProjectTemplate/blob/main/LICENSE) for more information.
+Distributed under the Apache License. See [`LICENSE`](https://github.com/padaiyal/jMonocle/blob/main/LICENSE) for more information.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/padaiyal/jMavenProjectTemplate.svg?style=for-the-badge
-[contributors-url]: https://github.com/padaiyal/jMavenProjectTemplate/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/padaiyal/jMavenProjectTemplate.svg?style=for-the-badge
-[forks-url]: https://github.com/padaiyal/jMavenProjectTemplate/network/members
-[stars-shield]: https://img.shields.io/github/stars/padaiyal/jMavenProjectTemplate.svg?style=for-the-badge
-[stars-url]: https://github.com/padaiyal/jMavenProjectTemplate/stargazers
-[issues-shield]: https://img.shields.io/github/issues/padaiyal/jMavenProjectTemplate.svg?style=for-the-badge
-[issues-url]: https://github.com/padaiyal/jMavenProjectTemplate/issues
-[license-shield]: https://img.shields.io/github/license/padaiyal/jMavenProjectTemplate.svg?style=for-the-badge
-[license-url]: https://github.com/padaiyal/jMavenProjectTemplate/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/padaiyal/jMonocle.svg?style=for-the-badge
+[contributors-url]: https://github.com/padaiyal/jMonocle/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/padaiyal/jMonocle.svg?style=for-the-badge
+[forks-url]: https://github.com/padaiyal/jMonocle/network/members
+[stars-shield]: https://img.shields.io/github/stars/padaiyal/jMonocle.svg?style=for-the-badge
+[stars-url]: https://github.com/padaiyal/jMonocle/stargazers
+[issues-shield]: https://img.shields.io/github/issues/padaiyal/jMonocle.svg?style=for-the-badge
+[issues-url]: https://github.com/padaiyal/jMonocle/issues
+[license-shield]: https://img.shields.io/github/license/padaiyal/jMonocle.svg?style=for-the-badge
+[license-url]: https://github.com/padaiyal/jMonocle/blob/master/LICENSE

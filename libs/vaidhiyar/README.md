@@ -19,10 +19,9 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Apache License][license-shield]][license-url] <br>
-![Maven build - Ubuntu latest](https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20Ubuntu%20latest/badge.svg?branch=main)
-![Maven build - Windows latest](https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20Windows%20latest/badge.svg?branch=main)
-![Maven build - MacOS latest](https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20MacOS%20latest/badge.svg?branch=main)
-![Publish to GitHub packages](https://github.com/padaiyal/jMonocle/workflows/Publish%20to%20GitHub%20packages/badge.svg)
+![Maven build - Ubuntu latest](https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20clean%20test%20verify/badge.svg?branch=main)
+[![Publish package to the Maven Central Repository](https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml/badge.svg)](https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml) <br>
+[![Latest version in Maven Central](https://img.shields.io/maven-central/v/io.github.padaiyal.libs/vaidhiyar)](https://search.maven.org/artifact/io.github.padaiyal.libs/vaidhiyar)
 </div>
 
 <!--

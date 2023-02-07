@@ -42,6 +42,7 @@ public class ArrayConverter extends SimpleArgumentConverter {
    *
    * @param arrayObject The string to convert.
    * @param targetType  The type of array to convert it to.
+   * @return An array representing the input string.
    * @throws ArgumentConversionException When the provided targetType is not supported.
    */
   public static Object[] convertStringToArray(Object arrayObject, Class<?> targetType) {

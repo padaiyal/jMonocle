@@ -103,12 +103,19 @@ class CommandLineUtilityTest {
 
     operatingSystem = OperatingSystem.getOperatingSystem();
 
-    commandLine = switch (operatingSystem) {
-      case WINDOWS -> CommandLine.CMD;
-      case LINUX -> CommandLine.BASH;
-      case MAC_OS_X -> CommandLine.ZSH;
-      default -> null;
-    };
+    switch (operatingSystem) {
+      case WINDOWS:
+        commandLine = CommandLine.CMD;
+        break;
+      case LINUX:
+        commandLine = CommandLine.BASH;
+        break;
+      case MAC_OS_X:
+        commandLine = CommandLine.ZSH;
+        break;
+      default:
+        commandLine = null;
+    }
   }
 
   /**
