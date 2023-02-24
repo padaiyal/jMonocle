@@ -2,6 +2,7 @@ package org.padaiyal.utilities;
 
 import java.io.IOException;
 import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.junit.jupiter.api.BeforeAll;
 
 /**
@@ -17,6 +18,6 @@ public class I18nUtilityWithAllLoggingTest extends I18nUtilityTest {
   @BeforeAll
   static void setUpClass() throws IOException {
     loggingLevel = Level.ALL;
-    I18nUtilityTest.setUpClass();
+    Configurator.setAllLevels("", loggingLevel);
   }
 }
