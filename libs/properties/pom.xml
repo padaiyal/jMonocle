@@ -6,19 +6,31 @@
 
   <groupId>io.github.padaiyal.libs</groupId>
   <artifactId>properties</artifactId>
-  <version>2023.02.07</version>
+  <version>2023.02.23</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>10</source>
+          <target>10</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <parent>
     <groupId>io.github.padaiyal</groupId>
     <artifactId>popper</artifactId>
-    <version>2023.01.24</version>
+    <version>2023.02.19</version>
   </parent>
 
   <dependencies>
     <dependency>
       <groupId>io.github.padaiyal.libs</groupId>
       <artifactId>unittestextras</artifactId>
-      <version>2023.02.07</version>
+      <version>2023.02.23</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

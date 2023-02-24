@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.MissingResourceException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -26,6 +28,10 @@ class I18nUtilityTest {
    * The name of the default resource bundle.
    */
   private static String defaultResourceBundle = null;
+  /**
+   * The logging level to set for the code to test.
+   */
+  protected static Level loggingLevel = Level.OFF;
 
   /**
    * Retrieves the required information from test.properties file.
@@ -34,7 +40,7 @@ class I18nUtilityTest {
    */
   @BeforeAll
   static void setUpClass() throws IOException {
-
+    Configurator.setAllLevels("", loggingLevel);
     PropertyUtility.addPropertyFile(I18nUtilityTest.class, "test.properties");
     String language = PropertyUtility.getProperty("common.language");
     String region = PropertyUtility.getProperty("common.region");

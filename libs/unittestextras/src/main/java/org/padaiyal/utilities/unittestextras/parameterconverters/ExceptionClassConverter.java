@@ -27,6 +27,7 @@ public class ExceptionClassConverter implements ArgumentConverter {
     Objects.requireNonNull(expectedExceptionClassString);
 
     switch (expectedExceptionClassString) {
+      case "ArgumentConversionException.class": return ArgumentConversionException.class;
       case "NullPointerException.class": return NullPointerException.class;
       case "IllegalArgumentException.class": return IllegalArgumentException.class;
       case "MissingResourceException.class": return MissingResourceException.class;
