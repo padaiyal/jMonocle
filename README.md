@@ -19,9 +19,9 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Apache License][license-shield]][license-url] <br>
-![Maven build - Ubuntu latest](https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20clean%20test%20verify/badge.svg?branch=main)
-[![Publish package to the Maven Central Repository](https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml/badge.svg)](https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml) <br>
-[![Latest version in Maven Central](https://img.shields.io/maven-central/v/io.github.padaiyal/monocle)](https://search.maven.org/artifact/io.github.padaiyal/monocle)
+[![Maven build - Ubuntu latest][build-shield]][build-url]
+[![Publish package to the Maven Central Repository][publish-workflow-badge]][publish-workflow-url] <br>
+[![Latest version in Maven Central][maven-shield]][maven-url]
 </div>
   
 <!-- TABLE OF CONTENTS -->
@@ -48,15 +48,22 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Describe the project.
+A mono repo containing all the java libraries. Currently, we support the following libraries:
+* [commandline][commandline-url]
+* [filesystem][filesystem-url]
+* [host][host-url]
+* [i18n][i18n-url]
+* [properties][properties-url]
+* [unittestextras][unittestextras-url]
+* [vaidhiyar][vaidhiyar-url]
 
 <!-- USAGE -->
 ## Usage
-Specify the steps to set up and use the project.
+Please refer to each project READMEs to find out how to use them.
 
 <!-- ROADMAP -->
 ## Roadmap
-See the [open issues](https://github.com/padaiyal/jMonocle/issues) for a list of proposed features (and known issues).
+See the [open issues][issues-url] for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -71,7 +78,7 @@ Contributions are what make the open source community such an amazing place to b
 
 <!-- LICENSE -->
 ## License
-Distributed under the Apache License. See [`LICENSE`](https://github.com/padaiyal/jMonocle/blob/main/LICENSE) for more information.
+Distributed under the Apache License. See [`LICENSE`][license-url] for more information.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
@@ -85,4 +92,17 @@ Distributed under the Apache License. See [`LICENSE`](https://github.com/padaiya
 [issues-shield]: https://img.shields.io/github/issues/padaiyal/jMonocle.svg?style=for-the-badge
 [issues-url]: https://github.com/padaiyal/jMonocle/issues
 [license-shield]: https://img.shields.io/github/license/padaiyal/jMonocle.svg?style=for-the-badge
-[license-url]: https://github.com/padaiyal/jMonocle/blob/master/LICENSE
+[license-url]: https://github.com/padaiyal/jMonocle/blob/main/LICENSE
+[build-shield]: https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20clean%20test%20verify/badge.svg?branch=main
+[build-url]: https://github.com/padaiyal/jMonocle/actions/workflows/maven_build.yml?query=branch%3Amain
+[publish-workflow-badge]:https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml/badge.svg
+[publish-workflow-url]:https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml
+[maven-shield]: https://img.shields.io/maven-central/v/io.github.padaiyal/monocle
+[maven-url]:https://central.sonatype.com/artifact/io.github.padaiyal/monocle/2023.02.07/versions
+[commandline-url]: https://github.com/padaiyal/jMonocle/tree/main/libs/commandline
+[filesystem-url]: https://github.com/padaiyal/jMonocle/tree/main/libs/filesystem
+[host-url]: https://github.com/padaiyal/jMonocle/tree/main/libs/host
+[i18n-url]: https://github.com/padaiyal/jMonocle/tree/main/libs/i18n
+[properties-url]: https://github.com/padaiyal/jMonocle/tree/main/libs/properties
+[unittestextras-url]: https://github.com/padaiyal/jMonocle/tree/main/libs/unittestextras
+[vaidhiyar-url]: https://github.com/padaiyal/jMonocle/tree/main/libs/vaidhiyar

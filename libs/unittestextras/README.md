@@ -15,13 +15,11 @@
   </p>
 
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Apache License][license-shield]][license-url] <br>
-![Maven build - Ubuntu latest](https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20clean%20test%20verify/badge.svg?branch=main)
-[![Publish package to the Maven Central Repository](https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml/badge.svg)](https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml) <br>
-[![Latest version in Maven Central](https://img.shields.io/maven-central/v/io.github.padaiyal.libs/unittestextras)](https://search.maven.org/artifact/io.github.padaiyal.libs/unittestextras)
+[![Maven build - Ubuntu latest][build-shield]][build-url]
+[![Publish package to the Maven Central Repository][publish-workflow-badge]][publish-workflow-url] <br>
+[![Latest version in Maven Central][maven-shield]][maven-url]
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -40,9 +38,6 @@
     <li>
         <a href="#contributing">Contributing</a>
     </li>
-    <li>
-        <a href="#license">License</a>
-    </li>
   </ol>
 </details>
 
@@ -54,20 +49,16 @@ The following features are supported:
 
 <!-- USAGE -->
 ## Usage
-This project can be used as a dependency to other projects. To add this as a dependency follow these steps:
-
-1. Download the latest jar for this project from GitHub packages and place it within the dependant project.
-2. Add the following dependency tag to the pom.xml of the dependant project:
+Add the following dependency tag to the pom.xml of the dependant project:
 ```
 <dependency>
-    <groupId>org.java.padaiyal.utilities</groupId>
-    <artifactId>unittestextras</artifactId>
-    <version>2021.05.20</version>
-    <scope>system</scope>
-    <systemPath>${basedir}/<PATH_TO_JAR></systemPath>
+  <groupId>io.github.padaiyal.libs</groupId>
+  <artifactId>unittestextras</artifactId>
+  <version>2023.02.07</version>
 </dependency>
 ```
-NOTE: Refer the GitHub packages / releases section for this repo to know the latest released version of this project.
+NOTE: Refer to the [Maven repository][maven-url]
+/ [releases][releases-url] to know the latest released version of this project.
 
 Here's a sample snippet showing class conversion from the class' name:
 ```
@@ -77,7 +68,7 @@ System.out.println(Arrays.toString(convertedArray)); // [hello,  world]
 
 <!-- ROADMAP -->
 ## Roadmap
-See the [open issues](https://github.com/padaiyal/jMonocle/issues) for a list of proposed features (and known issues).
+See the [open issues][issues-url] for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -89,21 +80,18 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the branch. (`git push origin contribution/AmazingContribution`)
 5. Open a Pull Request.
 
-
-<!-- LICENSE -->
-## License
-Distributed under the Apache License. See [`LICENSE`](https://github.com/padaiyal/jMonocle/blob/main/LICENSE) for more information.
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/padaiyal/jUnitTestExtras.svg?style=for-the-badge
 [contributors-url]: https://github.com/padaiyal/jMonocle/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/padaiyal/jUnitTestExtras.svg?style=for-the-badge
-[forks-url]: https://github.com/padaiyal/jMonocle/network/members
-[stars-shield]: https://img.shields.io/github/stars/padaiyal/jUnitTestExtras.svg?style=for-the-badge
-[stars-url]: https://github.com/padaiyal/jMonocle/stargazers
 [issues-shield]: https://img.shields.io/github/issues/padaiyal/jUnitTestExtras.svg?style=for-the-badge
-[issues-url]: https://github.com/padaiyal/jMonocle/issues
+[issues-url]: https://github.com/padaiyal/jMonocle/issues?q=is%3Aissue+is%3Aopen+label%3Aunittestextras
 [license-shield]: https://img.shields.io/github/license/padaiyal/jUnitTestExtras.svg?style=for-the-badge
-[license-url]: https://github.com/padaiyal/jMonocle/blob/master/LICENSE
+[license-url]: https://github.com/padaiyal/jMonocle/blob/main/libs/unittestextras/LICENSE
+[build-shield]: https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20clean%20test%20verify/badge.svg?branch=main
+[build-url]: https://github.com/padaiyal/jMonocle/actions/workflows/maven_build.yml?query=branch%3Amain
+[publish-workflow-badge]:https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml/badge.svg
+[publish-workflow-url]:https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml
+[maven-shield]: https://img.shields.io/maven-central/v/io.github.padaiyal.libs/unittestextras
+[maven-url]: https://central.sonatype.com/artifact/io.github.padaiyal.libs/unittestextras/2023.02.07/versions
+[releases-url]: https://github.com/padaiyal/jMonocle/releases
