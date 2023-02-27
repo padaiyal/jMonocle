@@ -6,7 +6,7 @@
 
   <groupId>io.github.padaiyal.libs</groupId>
   <artifactId>filesystem</artifactId>
-  <version>2023.02.07</version>
+  <version>2023.12.11</version>
 
   <parent>
     <groupId>io.github.padaiyal</groupId>
@@ -15,9 +15,71 @@
   </parent>
 
   <properties>
-    <maven.compiler.target>14</maven.compiler.target>
     <maven.compiler.source>14</maven.compiler.source>
+    <maven.compiler.target>14</maven.compiler.target>
+    <dependency.mockito.version>4.11.0</dependency.mockito.version>
   </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.github.padaiyal.libs</groupId>
+      <artifactId>properties</artifactId>
+        <version>2023.12.11</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.padaiyal.libs</groupId>
+      <artifactId>i18n</artifactId>
+      <version>2023.12.11</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.padaiyal.libs</groupId>
+      <artifactId>commandline</artifactId>
+      <version>2023.12.11</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.padaiyal.libs</groupId>
+      <artifactId>unittestextras</artifactId>
+      <version>2023.12.11</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${dependency.mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-inline</artifactId>
+      <version>${dependency.mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+      <dependency>
+          <groupId>io.github.padaiyal.libs</groupId>
+          <artifactId>unittestextras</artifactId>
+          <version>2023.12.11</version>
+          <scope>test</scope>
+      </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <!--
+              These files are excluded from code coverage because of a known timeout issue found in MAC OS.
+              https://bugs.openjdk.java.net/browse/JDK-7133447
+            -->
+            <exclude>**/FileSystemUtility*</exclude>
+            <exclude>**/WatchServiceRegisteringFileVisitor*</exclude>
+            <exclude>**/WatchServiceRegistrationInfo*</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <distributionManagement>
     <repository>
