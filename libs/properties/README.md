@@ -53,7 +53,7 @@ Add the following dependency tag to the pom.xml of the dependant project:
 <dependency>
   <groupId>io.github.padaiyal.libs</groupId>
   <artifactId>properties</artifactId>
-  <version>2023.02.07</version>
+  <version>2023.12.11</version>
 </dependency>
 ```
 NOTE: Refer to the [Maven Repository][maven-url]
