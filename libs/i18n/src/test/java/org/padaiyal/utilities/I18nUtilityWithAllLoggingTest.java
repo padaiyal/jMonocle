@@ -19,5 +19,6 @@ public class I18nUtilityWithAllLoggingTest extends I18nUtilityTest {
   static void setUpClass() throws IOException {
     loggingLevel = Level.ALL;
     Configurator.setAllLevels("", loggingLevel);
+    I18nUtilityTest.setUpClass();
   }
 }
