@@ -1,5 +1,7 @@
 package org.padaiyal.utilities.unittestextras.parameterconverters;
 
+import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.util.IllegalFormatConversionException;
 import java.util.MissingResourceException;
 import java.util.Objects;
@@ -31,6 +33,8 @@ public class ExceptionClassConverter implements ArgumentConverter {
       case "NullPointerException.class": return NullPointerException.class;
       case "IllegalArgumentException.class": return IllegalArgumentException.class;
       case "MissingResourceException.class": return MissingResourceException.class;
+      case "IOException.class": return IOException.class;
+      case "NoSuchFileException.class": return NoSuchFileException.class;
       case "IllegalFormatConversionException.class": return IllegalFormatConversionException.class;
       default: throw new ArgumentConversionException(
           String.format(

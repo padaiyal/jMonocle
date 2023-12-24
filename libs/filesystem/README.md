@@ -7,28 +7,22 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 <div align="center">
-  <h1 align="center">Project Name</h1>
+  <h1 align="center">jFilesystem</h1>
   <p align="center">
-    A template for Java maven projects.
+    A library for file management and monitoring
     <br />
-    <a href="https://github.com/padaiyal/jMavenProjectTemplate/issues/new/choose">Report Bug/Request Feature</a>
+    <a href="https://github.com/padaiyal/jMonocle/issues/new/choose">Report Bug/Request Feature</a>
   </p>
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
+[![Stargazers][stars-shield]][stars-url]<br>
 [![Issues][issues-shield]][issues-url]
-[![Apache License][license-shield]][license-url] <br>
-![Maven build - Ubuntu latest](https://github.com/padaiyal/jMavenProjectTemplate/workflows/Maven%20build%20-%20Ubuntu%20latest/badge.svg?branch=main)
-![Maven build - Windows latest](https://github.com/padaiyal/jMavenProjectTemplate/workflows/Maven%20build%20-%20Windows%20latest/badge.svg?branch=main)
-![Maven build - MacOS latest](https://github.com/padaiyal/jMavenProjectTemplate/workflows/Maven%20build%20-%20MacOS%20latest/badge.svg?branch=main)
-![Publish to GitHub packages](https://github.com/padaiyal/jMavenProjectTemplate/workflows/Publish%20to%20GitHub%20packages/badge.svg)
+[![Apache License][license-shield]][license-url]<br>
+[![Maven build - Ubuntu latest][build-shield]][build-url] 
+[![Publish package to the Maven Central Repository][publish-workflow-badge]][publish-workflow-url] <br>
+[![Latest version in Maven Central][maven-shield]][maven-url]
 </div>
-
-<!--
-*** To avoid retyping too much info. Do a search and replace with your text editor for the following:
-    'jMavenProjectTemplate'
- -->
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -54,15 +48,28 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Describe the project.
+This library can be used for creating, modifying, deleting and monitoring files and directories.
 
 <!-- USAGE -->
 ## Usage
-Specify the steps to set up and use the project.
+This project is to be used as a dependency to other projects. 
+Adding this project as a dependency is as follows:
+
+Add the following dependency tag to the `pom.xml` of the dependent project:
+   ```
+   <dependency>
+       <groupId>io.github.padaiyal.libs</groupId>
+       <artifactId>filesystem</artifactId>
+       <version>2023.12.11</version>
+   </dependency>
+   ```
+   NOTE: Refer to the [Maven Repository][maven-url]
+   / [releases][releases-url] to know
+   the latest released version of this project.
 
 <!-- ROADMAP -->
 ## Roadmap
-See the [open issues](https://github.com/padaiyal/jMavenProjectTemplate/issues) for a list of proposed features (and known issues).
+See the [open issues][issues-url] for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -77,18 +84,27 @@ Contributions are what make the open source community such an amazing place to b
 
 <!-- LICENSE -->
 ## License
-Distributed under the Apache License. See [`LICENSE`](https://github.com/padaiyal/jMavenProjectTemplate/blob/main/LICENSE) for more information.
+Distributed under the Apache License. See [`LICENSE`][license-url] for more information.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/padaiyal/jMavenProjectTemplate.svg?style=for-the-badge
-[contributors-url]: https://github.com/padaiyal/jMavenProjectTemplate/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/padaiyal/jMavenProjectTemplate.svg?style=for-the-badge
-[forks-url]: https://github.com/padaiyal/jMavenProjectTemplate/network/members
-[stars-shield]: https://img.shields.io/github/stars/padaiyal/jMavenProjectTemplate.svg?style=for-the-badge
-[stars-url]: https://github.com/padaiyal/jMavenProjectTemplate/stargazers
-[issues-shield]: https://img.shields.io/github/issues/padaiyal/jMavenProjectTemplate.svg?style=for-the-badge
-[issues-url]: https://github.com/padaiyal/jMavenProjectTemplate/issues
-[license-shield]: https://img.shields.io/github/license/padaiyal/jMavenProjectTemplate.svg?style=for-the-badge
-[license-url]: https://github.com/padaiyal/jMavenProjectTemplate/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/padaiyal/jFilesystem.svg?style=for-the-badge
+[contributors-url]: https://github.com/padaiyal/jMonocle/graphs/contributors
+[issues-shield]: https://img.shields.io/github/issues/padaiyal/jMonocle.svg?style=for-the-badge
+[issues-url]: https://github.com/padaiyal/jMonocle/issues?q=is%3Aissue+is%3Aopen+label%3Afilesystem
+[forks-shield]: https://img.shields.io/github/forks/padaiyal/jFilesystem.svg?style=for-the-badge
+[forks-url]: https://github.com/padaiyal/jMonocle/network/members
+[stars-shield]: https://img.shields.io/github/stars/padaiyal/jFilesystem.svg?style=for-the-badge
+[stars-url]: https://github.com/padaiyal/jMonocle/stargazers
+[issues-shield]: https://img.shields.io/github/issues/padaiyal/jFilesystem.svg?style=for-the-badge
+[issues-url]: https://github.com/padaiyal/jMonocle/issues
+[license-shield]: https://img.shields.io/github/license/padaiyal/jFilesystem.svg?style=for-the-badge
+[license-url]: https://github.com/padaiyal/jMonocle/blob/main/libs/filesystem/LICENSE
+[build-shield]: https://github.com/padaiyal/jMonocle/workflows/Maven%20build%20-%20clean%20test%20verify/badge.svg?branch=main
+[build-url]: https://github.com/padaiyal/jMonocle/actions/workflows/maven_build.yml?query=branch%3Amain
+[publish-workflow-badge]:https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml/badge.svg
+[publish-workflow-url]:https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml
+[maven-shield]: https://img.shields.io/maven-central/v/io.github.padaiyal.libs/filesystem
+[maven-url]: https://central.sonatype.com/artifact/io.github.padaiyal.libs/filesystem/2023.02.07/versions
+[releases-url]: https://github.com/padaiyal/jMonocle/releases

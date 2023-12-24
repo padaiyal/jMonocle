@@ -6,7 +6,7 @@
 
   <groupId>io.github.padaiyal.libs</groupId>
   <artifactId>i18n</artifactId>
-  <version>2023.02.23</version>
+  <version>2023.12.11</version>
 
   <parent>
     <groupId>io.github.padaiyal</groupId>
@@ -18,12 +18,12 @@
     <dependency>
       <groupId>io.github.padaiyal.libs</groupId>
       <artifactId>properties</artifactId>
-      <version>2023.02.23</version>
+      <version>2023.12.11</version>
     </dependency>
     <dependency>
       <groupId>io.github.padaiyal.libs</groupId>
       <artifactId>unittestextras</artifactId>
-      <version>2023.02.23</version>
+      <version>2023.12.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
