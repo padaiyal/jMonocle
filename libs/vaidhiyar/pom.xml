@@ -7,11 +7,23 @@
   <groupId>io.github.padaiyal.libs</groupId>
   <artifactId>vaidhiyar</artifactId>
   <version>2023.12.11</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>9</source>
+          <target>9</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <parent>
     <groupId>io.github.padaiyal</groupId>
     <artifactId>popper</artifactId>
-    <version>2023.01.24</version>
+    <version>2023.02.19</version>
   </parent>
 
   <distributionManagement>

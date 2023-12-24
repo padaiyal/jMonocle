@@ -4,7 +4,9 @@ import java.util.IllegalFormatConversionException;
 import java.util.MissingResourceException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.converter.ArgumentConversionException;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.converter.ConvertWith;
+import org.junit.jupiter.params.provider.CsvSource;
 
 /**
  * Tests the functionality of ExceptionClassConverter.
@@ -15,20 +17,16 @@ public class ExceptionClassConverterTest {
    * Tests org.padaiyal.popper.parameterconverters.ExceptionClassConverter
    * ::convertExceptionNameToClass() with invalid inputs.
    */
-  @Test
-  public void testConvertExceptionNameToClassWithInvalidInputs() {
-    // Null input
+  @ParameterizedTest
+  @CsvSource({", NullPointerException.class",
+              "UnknownException, ArgumentConversionException.class"})
+  public void testConvertExceptionNameToClassWithInvalidInputs(
+        String exceptionStringToCovert,
+        @ConvertWith(ExceptionClassConverter.class)
+        Class<? extends Exception> expectedExceptionToBeThrown) {
     Assertions.assertThrows(
-        NullPointerException.class,
-        () -> ExceptionClassConverter.convertExceptionNameToClass(null));
-
-    // Unsupported/Unknown class
-    Assertions.assertThrows(
-        ArgumentConversionException.class,
-        () -> ExceptionClassConverter.convertExceptionNameToClass(
-            "UnknownException"
-        )
-    );
+        expectedExceptionToBeThrown,
+        () -> ExceptionClassConverter.convertExceptionNameToClass(exceptionStringToCovert));
   }
 
   /**

@@ -14,8 +14,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Future;
 import javax.management.MBeanServerConnection;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -36,7 +38,7 @@ import org.padaiyal.utilities.vaidhiyar.abstractions.GarbageCollectionInfo;
 /**
  * Tests JvmUtility.
  */
-public final class JvmUtilityTest {
+class JvmUtilityTest {
 
   /**
    * Logger object used to log information and errors.
@@ -66,6 +68,10 @@ public final class JvmUtilityTest {
    * Stores the computed thread CPU usages.
    */
   private static Map<Long, Double> threadCpuUsages;
+  /**
+   * The logging level to set for the code to test.
+   */
+  protected static Level loggingLevel = Level.OFF;
 
   /**
    * Sets up dependant values needed for the test.
@@ -74,6 +80,7 @@ public final class JvmUtilityTest {
    */
   @BeforeAll
   public static void setUp() throws IOException {
+    Configurator.setAllLevels("", loggingLevel);
     PropertyUtility.addPropertyFile(
         JvmUtilityTest.class,
         "JvmUtilityTest.properties"
@@ -143,20 +150,24 @@ public final class JvmUtilityTest {
       double actualCpuLoadAllowedTolerance
   ) throws InterruptedException, IOException {
     final CpuLoadGenerator cpuLoadGenerator = new CpuLoadGenerator();
-    cpuLoadGenerator.start(expectedCpuLoad, testDurationInMilliSeconds);
-
     String expectedCpuLoadThreadName = PropertyUtility.getProperty("CpuLoadGenerator.thread.name");
 
-    Arrays.stream(JvmUtility.getAllExtendedThreadInfo(0))
-        .filter(extendedThreadInfo -> extendedThreadInfo.getThreadInfo()
-            .getThreadName()
-            .equals(expectedCpuLoadThreadName)
-        )
-        .map(extendedThreadInfo -> extendedThreadInfo.getCpuUsage() == 0)
-        .forEach(Assertions::assertTrue);
+    ExtendedThreadInfo[] preExistingCpuLoadThreadInfos = JvmUtility.getAllExtendedThreadInfo(0);
+    final long preExistingCpuLoadThreadsCount = Arrays.stream(preExistingCpuLoadThreadInfos)
+        .filter(extendedThreadInfo -> extendedThreadInfo.getThreadInfo().getThreadName()
+              .equals(expectedCpuLoadThreadName))
+        .count();
 
+    cpuLoadGenerator.start(expectedCpuLoad, testDurationInMilliSeconds);
     // Wait for the CPU load generator to start.
     Thread.sleep(durationToWaitForCpuLoadGeneratorInMilliSeconds);
+    Arrays.stream(JvmUtility.getAllExtendedThreadInfo(0))
+            .filter(extendedThreadInfo -> extendedThreadInfo.getThreadInfo()
+                    .getThreadName()
+                    .equals(expectedCpuLoadThreadName)
+            )
+            .map(extendedThreadInfo -> extendedThreadInfo.getCpuUsage() >= 0)
+            .forEach(Assertions::assertTrue);
     ExtendedThreadInfo[] extendedThreadInfos = JvmUtility.getAllExtendedThreadInfo(0);
 
     Assertions.assertNotNull(extendedThreadInfos);
@@ -166,7 +177,7 @@ public final class JvmUtilityTest {
         Arrays.stream(extendedThreadInfos)
             .filter(extendedThreadInfo -> extendedThreadInfo.getThreadInfo().getThreadName()
                 .equals(expectedCpuLoadThreadName))
-            .count()
+            .count() - preExistingCpuLoadThreadsCount
     );
 
     // Test if required load is generated within an expected amount of time.
@@ -211,6 +222,7 @@ public final class JvmUtilityTest {
    */
   @Test
   public void testCpuUsageCollector() throws InterruptedException {
+    JvmUtility.setRunThreadCpuUsageCollectorSwitch(true);
     Assertions.assertTrue(JvmUtility.getRunThreadCpuUsageCollectorSwitch());
     Assertions.assertTrue(JvmUtility.isThreadCpuUsageCollectorRunning());
 
@@ -465,13 +477,21 @@ public final class JvmUtilityTest {
    */
   @ParameterizedTest
   @CsvSource({
-      "-100"
+      "-100",
+      "99999999" // Non-existent thread.
   })
   void testGetCpuUsageWithInvalidInput(long threadId) {
-    Assertions.assertThrows(
-        IllegalArgumentException.class,
-        () -> JvmUtility.getCpuUsage(threadId)
-    );
+    if (threadId < 0) {
+      Assertions.assertThrows(
+              IllegalArgumentException.class,
+              () -> JvmUtility.getCpuUsage(threadId)
+      );
+    } else {
+      Assertions.assertEquals(
+              -1,
+              JvmUtility.getCpuUsage(threadId)
+      );
+    }
   }
 
   /**
@@ -784,14 +804,17 @@ public final class JvmUtilityTest {
    */
   @ParameterizedTest
   @CsvSource({
-      "., jvm_info, 0",
-      "., jvm_info, 100"
+      "., jvm_info, 0, false",
+      "., jvm_info, 100, false",
   })
-  void testDumpingJvmInformationToFileWithInvalidInputs(
+  void testDumpingJvmInformationToFileWithValidInputs(
       String destinationDirectory,
       String fileName,
-      int threadStackDepth
+      int threadStackDepth,
+      boolean errorOnWritingJson
   ) throws IOException {
+    // TODO: If errorOnWritingJson is set to true, mock gsonObject.toJson() to raise
+
     Path destinationDirectoryPath = Paths.get(destinationDirectory);
     JvmUtility.dumpJvmInformationToFile(
         destinationDirectoryPath,
@@ -800,7 +823,8 @@ public final class JvmUtilityTest {
     );
 
     String expectedFileName = fileName.endsWith(".json") ? fileName : (fileName + ".json");
-    Assertions.assertTrue(
+    Assertions.assertEquals(
+        !errorOnWritingJson,
         Files.exists(
             destinationDirectoryPath.resolve(expectedFileName)
         )

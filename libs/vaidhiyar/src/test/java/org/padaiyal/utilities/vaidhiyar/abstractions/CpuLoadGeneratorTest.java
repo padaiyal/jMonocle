@@ -2,7 +2,10 @@ package org.padaiyal.utilities.vaidhiyar.abstractions;
 
 import java.io.IOException;
 import java.time.Duration;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.ArgumentMatchers;
@@ -14,6 +17,19 @@ import org.mockito.stubbing.Answer;
  * Tests CpuLoadGenerator.
  */
 public class CpuLoadGeneratorTest {
+
+  /**
+   * The logging level to set for the code to test.
+   */
+  protected static Level loggingLevel = Level.OFF;
+
+  /**
+   * Prepares the static variables used for the tests.
+   */
+  @BeforeAll
+  static void prepare() throws IOException {
+    Configurator.setAllLevels("", loggingLevel);
+  }
 
   /**
    * Test CPU load generator with invalid inputs.
