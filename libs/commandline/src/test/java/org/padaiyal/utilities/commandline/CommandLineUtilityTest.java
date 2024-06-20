@@ -8,8 +8,10 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Stream;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -53,6 +55,10 @@ class CommandLineUtilityTest {
    * Logger object.
    */
   private final Logger logger = LogManager.getLogger(CommandLineUtilityTest.class);
+  /**
+   * The logging level to set for the code to test.
+   */
+  protected static Level loggingLevel = Level.OFF;
 
   /**
    * Prepares the static variables used for the tests.
@@ -61,6 +67,7 @@ class CommandLineUtilityTest {
    */
   @BeforeAll
   static void prepare() throws IOException {
+    Configurator.setAllLevels("", loggingLevel);
     PropertyUtility.addPropertyFile(
         CommandLineUtilityTest.class,
         CommandLineUtilityTest.class.getSimpleName() + ".properties"

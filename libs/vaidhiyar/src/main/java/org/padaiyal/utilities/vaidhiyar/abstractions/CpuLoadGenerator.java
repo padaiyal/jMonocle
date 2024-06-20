@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -108,7 +109,7 @@ public final class CpuLoadGenerator extends Thread {
                             load,
                             durationInMilliSeconds
                     )
-            ).toList();
+            ).collect(Collectors.toList());
 
     // Invoke all the initialized threads
     for (CpuLoadThread cpuLoadThread : cpuLoadThreads) {
