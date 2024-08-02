@@ -6,7 +6,8 @@
 
   <groupId>io.github.padaiyal.libs</groupId>
   <artifactId>commandline</artifactId>
-  <version>2023.12.11</version>
+
+  <version>2024.08.11</version>
 
   <url>https://maven.pkg.github.com/padaiyal/jMonocle</url>
 
@@ -32,12 +33,12 @@
     <dependency>
       <groupId>io.github.padaiyal.libs</groupId>
       <artifactId>properties</artifactId>
-      <version>2023.12.11</version>
+      <version>2024.08.11</version>
     </dependency>
     <dependency>
       <groupId>io.github.padaiyal.libs</groupId>
       <artifactId>i18n</artifactId>
-      <version>2023.12.11</version>
+      <version>2024.08.11</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
     <dependency>

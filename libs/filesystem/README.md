@@ -60,7 +60,7 @@ Add the following dependency tag to the `pom.xml` of the dependent project:
    <dependency>
        <groupId>io.github.padaiyal.libs</groupId>
        <artifactId>filesystem</artifactId>
-       <version>2023.12.11</version>
+       <version>2024.08.11</version>
    </dependency>
    ```
    NOTE: Refer to the [Maven Repository][maven-url]
