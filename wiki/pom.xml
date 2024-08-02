@@ -4,9 +4,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.github.padaiyal.libs</groupId>
-  <artifactId>unittestextras</artifactId>
-  <version>2024.08.11</version>
+  <groupId>org.padaiyal</groupId>
+  <artifactId>wiki</artifactId>
+  <version>2021.04.27</version>
+  <packaging>pom</packaging>
 
   <parent>
     <groupId>io.github.padaiyal</groupId>
@@ -14,12 +15,8 @@
     <version>2023.01.24</version>
   </parent>
 
-  <distributionManagement>
-    <repository>
-      <id>github</id>
-      <name>jUnitTestExtras MVN package deployment</name>
-      <url>https://maven.pkg.github.com/padaiyal/jMonocle</url>
-    </repository>
-  </distributionManagement>
-
+  <properties>
+    <maven.compiler.target>14</maven.compiler.target>
+    <maven.compiler.source>14</maven.compiler.source>
+  </properties>
 </project>

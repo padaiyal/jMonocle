@@ -6,7 +6,7 @@
 
   <groupId>io.github.padaiyal</groupId>
   <artifactId>monocle</artifactId>
-  <version>2023.12.11</version>
+  <version>2024.08.11</version>
   <packaging>pom</packaging>
 
   <parent>
@@ -17,6 +17,7 @@
 
   <modules>
     <module>libs</module>
+    <module>wiki</module>
   </modules>
 
   <distributionManagement>

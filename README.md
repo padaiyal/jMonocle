@@ -98,7 +98,7 @@ Distributed under the Apache License. See [`LICENSE`][license-url] for more info
 [publish-workflow-badge]:https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml/badge.svg
 [publish-workflow-url]:https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml
 [maven-shield]: https://img.shields.io/maven-central/v/io.github.padaiyal/monocle
-[maven-url]:https://central.sonatype.com/artifact/io.github.padaiyal/monocle/2023.02.07/versions
+[maven-url]:https://central.sonatype.com/artifact/io.github.padaiyal/monocle/2024.08.11/versions
 [commandline-url]: https://github.com/padaiyal/jMonocle/tree/main/libs/commandline
 [filesystem-url]: https://github.com/padaiyal/jMonocle/tree/main/libs/filesystem
 [host-url]: https://github.com/padaiyal/jMonocle/tree/main/libs/host

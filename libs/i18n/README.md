@@ -52,7 +52,7 @@ Add the following dependency tag to the pom.xml of the dependant project:
 <dependency>
     <groupId>io.github.padaiyal.libs</groupId>
     <artifactId>i18n</artifactId>
-    <version>2023.12.11</version>
+    <version>2024.08.11</version>
 </dependency>
 ```
 NOTE: Refer to the [Maven Repository][maven-url]
@@ -97,6 +97,6 @@ Contributions are what make the open source community such an amazing place to b
 [publish-workflow-badge]:https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml/badge.svg
 [publish-workflow-url]:https://github.com/padaiyal/jMonocle/actions/workflows/maven_central_package_publish.yml
 [maven-shield]: https://img.shields.io/maven-central/v/io.github.padaiyal.libs/i18n
-[maven-url]: https://central.sonatype.com/artifact/io.github.padaiyal.libs/i18n/2023.02.07/versions
+[maven-url]: https://central.sonatype.com/artifact/io.github.padaiyal.libs/i18n/2024.08.11/versions
 [releases-url]: https://github.com/padaiyal/jMonocle/releases
 [lib-test-url]: https://github.com/padaiyal/jMonocle/blob/main/libs/i18n/src/test/java/org/padaiyal/utilities/I18nUtilityTest.java
